@@ -1,0 +1,14 @@
+<!-- {% extends "layout.html" %} -->
+
+{% extends "base.html" %}
+{% block content %}
+  {% for content in contents %}
+    {{content.message}}
+  {% endfor%}
+
+  <!--
+  {% if img_url %}
+    <p><img src="{{ img_url }}"></p>
+  {% endif %}
+  -->
+{% endblock %}

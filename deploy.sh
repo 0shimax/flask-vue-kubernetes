@@ -12,12 +12,6 @@ echo "Creating the database credentials..."
 kubectl apply -f ./kubernetes/secret.yml
 
 
-echo "Creating the postgres deployment and service..."
-
-kubectl create -f ./kubernetes/postgres-deployment.yml
-kubectl create -f ./kubernetes/postgres-service.yml
-
-
 
 echo "Creating the flask deployment and service..."
 
@@ -28,7 +22,7 @@ kubectl create -f ./kubernetes/flask-service.yml
 echo "Adding the ingress..."
 
 minikube addons enable ingress
-kubectl apply -f ./kubernetes/minikube-ingress.yml
+kubectl apply -f ./kubernetes/ingress.yml
 
 
 echo "Creating the vue deployment and service..."

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  {% for content in contents %}
+    <p>content.image_title</p>
+    {% if img_url %}
+      <p><img src="{{content.image}}"></p>
+    {% endif %}
+  {% endfor%}
+{% endblock %}

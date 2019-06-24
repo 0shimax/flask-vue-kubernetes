@@ -1,8 +1,12 @@
 import os
 
-POSTGRES_USER = os.environ.get('POSTGRES_USER')
-POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
-DATABASE_URL = f'postgres://{POSTGRES_USER}:{POSTGRES_PASSWORD}@postgres:5432/books'
+# POSTGRES_USER = os.environ.get('POSTGRES_USER')
+# POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
+# DATABASE_URL = f'postgres://{POSTGRES_USER}:{POSTGRES_PASSWORD}@postgres:5432/books'
+
+
+# http://flask.pocoo.org/docs/1.0/installation/
+# http://flask.pocoo.org/docs/1.0/quickstart/
 
 
 class BaseConfig:
