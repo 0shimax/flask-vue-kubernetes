@@ -1,6 +1,7 @@
 import os
-import pandas as pd
+from datetime import datetime
 
+import pandas as pd
 from flask import Flask, render_template
 from flask import Blueprint, jsonify, request
 from werkzeug import secure_filename
@@ -84,13 +85,16 @@ def send():
 
             plt.figure()
             df.plot()
-            img_path = os.path.join(file_path, 'pd_image.png')
+            img_path = file_path+datetime.now().strftime('%Y%m%d%H%M%S')+'pd_image.png')
             plt.savefig(img_path)
             plt.close()
 
+            contents = []
             img_fname = ''.join(img_path.split()[2:])
             img_url = '/uploads/' + img_fname
-            return render_template('index.html', img_url=img_url)
+            content = {'image_title':'sample' , 'image_path':img_path}
+            contents.append(content)
+            return render_template('show_images.html', contents=contents)
         else:
             return " <p>許可されていない拡張子です</p> "
     else:
