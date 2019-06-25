@@ -1,16 +1,17 @@
 import os
 from datetime import datetime
+import matplotlib.pyplot as plt
 
 import pandas as pd
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
 from flask import Blueprint, jsonify, request
 from werkzeug import secure_filename
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates')
 
 UPLOAD_FOLDER = '/tmp'
-ALLOWED_EXTENSIONS = ['csv', 'tsv']
+ALLOWED_EXTENSIONS = ['.csv', '.tsv']
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
@@ -32,14 +33,17 @@ def send():
 
             plt.figure()
             df.plot()
-            img_path = file_path+datetime.now().strftime('%Y%m%d%H%M%S')+'pd_image.png'
+            img_name = filename
+            img_name += datetime.now().strftime('%Y%m%d%H%M%S') + 'pd_image.png'
+
+            img_path = os.path.join(app.config['UPLOAD_FOLDER'], img_name)
             plt.savefig(img_path)
             plt.close()
 
             contents = []
-            img_fname = ''.join(img_path.split()[2:])
-            img_url = '/uploads/' + img_fname
-            content = {'image_title':'sample' , 'image_path':img_path}
+            img_url = '/uploads/' + img_name
+            content = {'image_title':'sample' , 'image_path':img_url}
+            print(content)
             contents.append(content)
             return render_template('show_images.html', contents=contents)
         else:
@@ -54,4 +58,4 @@ def uploaded_file(filename):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
