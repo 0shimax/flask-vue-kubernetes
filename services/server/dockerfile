@@ -23,4 +23,4 @@ COPY . /usr/src/app
 EXPOSE 5000
 
 # # run server
-CMD ["gunicorn", "-b 0.0.0.0:5001", "manage:app"]
+CMD ["gunicorn", "-b 0.0.0.0:5000", "manage:app"]
