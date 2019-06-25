@@ -21,7 +21,10 @@ RUN chmod +x /usr/src/app/entrypoint.sh
 COPY . /usr/src/app
 
 EXPOSE 5000
+ENV FLASK_APP ./project/api/sample_app.py
+ENV FLASK_RUN_HOST 0.0.0.0
 
-# # run server
+# run server
+CMD ["flask", "run"]
+
 # CMD ["gunicorn", "-b 0.0.0.0:5000", "manage:app"]
-# CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5000"]
