@@ -17,16 +17,4 @@ spec:
         env:
         - name: FLASK_ENV
           value: "development"
-        - name: APP_SETTINGS
-          value: "project.config.DevelopmentConfig"
-        - name: POSTGRES_USER
-          valueFrom:
-            secretKeyRef:
-              name: postgres-credentials
-              key: user
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgres-credentials
-              key: password
       restartPolicy: Always

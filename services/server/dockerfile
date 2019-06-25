@@ -21,4 +21,4 @@ RUN chmod +x /usr/src/app/entrypoint.sh
 COPY . /usr/src/app
 
 # run server
-CMD ["gunicorn", "-b 0.0.0.0:8080", "manage:app"]
+CMD ["gunicorn", "-b 0.0.0.0:5001", "manage:app"]
