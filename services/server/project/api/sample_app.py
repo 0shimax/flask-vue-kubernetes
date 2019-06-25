@@ -32,7 +32,7 @@ def send():
 
             plt.figure()
             df.plot()
-            img_path = file_path+datetime.now().strftime('%Y%m%d%H%M%S')+'pd_image.png')
+            img_path = file_path+datetime.now().strftime('%Y%m%d%H%M%S')+'pd_image.png'
             plt.savefig(img_path)
             plt.close()
 
