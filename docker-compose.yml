@@ -11,8 +11,6 @@ services:
     environment:
       - FLASK_ENV=development
       - APP_SETTINGS=project.config.DevelopmentConfig
-    depends_on:
-      - postgres
 
   client:
     build:
