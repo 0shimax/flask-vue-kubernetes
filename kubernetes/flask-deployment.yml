@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: mjhea0/flask-kubernetes:latest
+        image: docker build -t gcr.io/PROJECT_ID/hello-app:latest
         env:
         - name: FLASK_ENV
           value: "development"
