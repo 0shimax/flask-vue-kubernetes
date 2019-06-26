@@ -5,7 +5,7 @@ docker build -t gcr.io/${PROJECT_ID}/hello-flask-app:v1 .
 gcloud docker -- push gcr.io/${PROJECT_ID}/hello-flask-app:v1
 
 echo "Creating cluster"
-gcloud container clusters create hello-flask-cluster --num-nodes=1
+gcloud container clusters create hello-flask-cluster --num-nodes=1 --zone us-central1-b
 
 echo "Creating the flask deployment"
 kubectl apply -f ./kubernetes/flask-deployment.yml
