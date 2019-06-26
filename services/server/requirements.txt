@@ -1,6 +1,4 @@
 Flask==1.0.2
-Flask-Cors==3.0.4
-flask-migrate==2.2.0
 gunicorn==19.8.1
 Werkzeug==0.14.1
 pandas==0.24.2

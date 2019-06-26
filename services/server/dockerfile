@@ -23,4 +23,4 @@ EXPOSE 5000
 
 # run server
 # CMD ["flask", "run"]
-CMD ["gunicorn", "-b 0.0.0.0:5000", "/usr/src/app/project/api/sample_app:app"]
+CMD ["gunicorn", "-b 0.0.0.0:5000", "project.api.sample_app:app"]
