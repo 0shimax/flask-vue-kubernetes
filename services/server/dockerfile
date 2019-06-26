@@ -16,11 +16,11 @@ RUN pip install -r requirements.txt
 # add app
 COPY . /usr/src/app
 
-EXPOSE 5000
+EXPOSE 8080
 # ENV FLASK_ENV development
 # ENV FLASK_APP /usr/src/app/project/api/sample_app.py
 # ENV FLASK_RUN_HOST 0.0.0.0
 
 # run server
 # CMD ["flask", "run"]
-CMD ["gunicorn", "-b 0.0.0.0:5000", "project.api.sample_app:app"]
+CMD ["gunicorn", "-b 0.0.0.0:8080", "project.api.sample_app:app"]
