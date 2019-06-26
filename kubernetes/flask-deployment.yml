@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: gcr.io/PROJECT_ID/hello-flask-app:latest
+        image: gcr.io/PROJECT_ID/hello-flask-app:v2
         env:
         - name: FLASK_ENV
           value: "development"
