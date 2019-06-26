@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Building and upload flask app image"
-docker build -t gcr.io/${PROJECT_ID}/hello-flask-app:v1 .
+docker build -t gcr.io/${PROJECT_ID}/hello-flask-app:v1 ./services/server
 gcloud docker -- push gcr.io/${PROJECT_ID}/hello-flask-app:v1
 
 echo "Creating cluster"
