@@ -10,6 +10,6 @@ gcloud container clusters create hello-flask-cluster --num-nodes=1 --zone us-cen
 echo "Creating the flask deployment"
 kubectl apply -f ./kubernetes/flask-deployment.yml
 
-kubectl run hello-flask-web --image=gcr.io/${PROJECT_ID}/hello-flask-app:v1 --port 8080
+kubectl run hello-flask-web --image=gcr.io/${PROJECT_ID}/hello-flask-app:latest --port 8080
 
 kubectl expose deployment hello-flask-web --type=LoadBalancer --port 80 --target-port 8080
