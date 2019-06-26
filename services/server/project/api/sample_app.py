@@ -8,7 +8,7 @@ from flask import Blueprint, jsonify, request
 from werkzeug import secure_filename
 
 
-app = Flask(__name__, template_folder='../templates')
+# app = Flask(__name__, template_folder='../templates')
 
 UPLOAD_FOLDER = '/tmp'
 ALLOWED_EXTENSIONS = ['.csv', '.tsv']
