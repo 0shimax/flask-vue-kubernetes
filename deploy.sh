@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# set env
+export PROJECT_ID="$(gcloud config get-value project -q)"
+gcloud config set compute/zone us-central1-b
+
 echo "Building and upload flask app image"
 docker build -t gcr.io/${PROJECT_ID}/hello-flask-app:v2 ./services/server
 gcloud docker -- push gcr.io/${PROJECT_ID}/hello-flask-app:v2
